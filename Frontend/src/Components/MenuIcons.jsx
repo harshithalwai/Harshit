@@ -1,5 +1,7 @@
 import React from "react";
 
+/* ===== Menu & Close Icons ===== */
+
 export const MenuIcon = ({ className = "w-7 h-7" }) => (
   <svg
     className={className}

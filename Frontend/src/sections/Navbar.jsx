@@ -9,7 +9,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
@@ -19,8 +18,8 @@ const Navbar = () => {
   return (
     <motion.header
       className={`sticky inset-x-0 top-0 left-0 z-20 w-full transition-all duration-300 ${
-        scrolled 
-          ? "backdrop-blur-xl bg-slate-900/80 shadow-lg" 
+        scrolled
+          ? "backdrop-blur-xl bg-slate-900/80 shadow-lg"
           : "backdrop-blur-lg bg-slate-900/40"
       }`}
       initial={{ y: -100 }}
