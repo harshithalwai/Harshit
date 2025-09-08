@@ -24,10 +24,12 @@ const HeroText = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="z-10 mt-20 text-center md:mt-40 md:text-left"
       style={{
-        transform: `translate(${mousePosition.x * 5}px, ${mousePosition.y * 5}px)`
+        transform: `translate(${mousePosition.x * 5}px, ${
+          mousePosition.y * 5
+        }px)`,
       }}
     >
       {/* Desktop View */}
@@ -59,10 +61,7 @@ const HeroText = () => {
             transition={{ delay: 1.2, type: "spring", stiffness: 100 }}
             className="my-4"
           >
-            <FlipWords
-              words={words}
-              className="font-black text-8xl"
-            />
+            <FlipWords words={words} className="font-black text-8xl" />
           </motion.div>
           <motion.p
             className="text-4xl font-medium text-gray-300"
@@ -73,7 +72,7 @@ const HeroText = () => {
           >
             Web Solutions
           </motion.p>
-          
+
           {/* Enhanced CTA Buttons */}
           <motion.div
             className="flex gap-4 mt-8"
@@ -83,21 +82,32 @@ const HeroText = () => {
             transition={{ delay: 2, type: "spring", stiffness: 100 }}
           >
             <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              whileHover={{ 
+              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-1"
+              whileHover={{
                 scale: 1.05,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3)"
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
             >
-              View My Work
+              About Me
+              <motion.span
+                className="ml-1 text-2xl"
+                animate={{ x: [0, 10, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.2,
+                  ease: "easeInOut",
+                }}
+              >
+                ➜
+              </motion.span>
             </motion.button>
             <motion.button
               className="px-8 py-3 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 backgroundColor: "#3B82F6",
-                color: "#FFFFFF"
+                color: "#FFFFFF",
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -134,10 +144,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            <FlipWords
-              words={words}
-              className="font-bold text-7xl"
-            />
+            <FlipWords words={words} className="font-bold text-7xl" />
           </motion.div>
           <motion.p
             className="text-4xl font-black text-gray-300"
@@ -149,7 +156,7 @@ const HeroText = () => {
             Web Applications
           </motion.p>
         </div>
-        
+
         <motion.div
           className="flex flex-col gap-4 mt-6"
           variants={variants}

@@ -5,12 +5,16 @@ import Hero from "./sections/Hero.jsx";
 const App = () => {
   return (
     <>
-    <div className="bg-slate-900 text-white font-sans overflow-x-hidden">
-      <div className="container mx-auto max-w-7xl">
-        <Navbar />
-        <Hero />
+      <div className="bg-slate-900 text-white font-sans overflow-x-hidden">
+        <div className="container mx-auto max-w-7xl">
+          <Navbar />
+          <Hero />
+          <div
+            class="absolute inset-0 hidden md:block"
+            id="wrapper-canvas"
+          ></div>
+        </div>
       </div>
-    </div>
     </>
   );
 };
