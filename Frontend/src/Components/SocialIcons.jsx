@@ -8,7 +8,7 @@ import {
   GitHubIcon,
   GeeksforGeeksIcon,
   LeetCodeIcon,
-  LinkedInIcon, // <-- Ensure this icon exists in MenuIcons.jsx
+  LinkedInIcon,
 } from "./MenuIcons.jsx";
 
 const SocialIcons = () => {
