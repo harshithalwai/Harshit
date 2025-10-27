@@ -23,9 +23,12 @@ const HeroText = () => {
     visible: { opacity: 1, x: 0 },
   };
 
+  const resumeLink =
+    "https://drive.google.com/file/d/1EA21Cec__PWEEuLnq8DbGGcaUXepxLcC/view?usp=drivesdk";
+
   return (
     <motion.div
-      className="z-10 mt-20 text-center md:mt-40 md:text-left"
+      className="z-10 mt-16 sm:mt-24 md:mt-40 text-center md:text-left px-4 sm:px-8 lg:px-16"
       style={{
         transform: `translate(${mousePosition.x * 5}px, ${
           mousePosition.y * 5
@@ -33,9 +36,9 @@ const HeroText = () => {
       }}
     >
       {/* Desktop View */}
-      <div className="flex-col hidden md:flex px-5 sm:px-10 lg:px-15">
+      <div className="flex-col hidden md:flex px-5 sm:px-10 lg:px-20">
         <motion.h1
-          className="text-4xl font-medium text-white"
+          className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white"
           variants={variants}
           initial="hidden"
           animate="visible"
@@ -46,7 +49,7 @@ const HeroText = () => {
         </motion.h1>
         <div className="flex flex-col items-start">
           <motion.p
-            className="text-5xl font-medium text-gray-300"
+            className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-300"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -61,10 +64,10 @@ const HeroText = () => {
             transition={{ delay: 1.2, type: "spring", stiffness: 100 }}
             className="my-4"
           >
-            <FlipWords words={words} className="font-black text-8xl" />
+            <FlipWords words={words} className="font-black text-5xl sm:text-6xl lg:text-8xl" />
           </motion.div>
           <motion.p
-            className="text-4xl font-medium text-gray-300"
+            className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-300"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -75,14 +78,18 @@ const HeroText = () => {
 
           {/* Enhanced CTA Buttons */}
           <motion.div
-            className="flex gap-4 mt-8"
+            className="flex flex-wrap gap-4 mt-8"
             variants={variants}
             initial="hidden"
             animate="visible"
             transition={{ delay: 2, type: "spring", stiffness: 100 }}
           >
-            <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-1"
+            {/* Resume button */}
+            <motion.a
+              href={resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-1"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3)",
@@ -101,9 +108,10 @@ const HeroText = () => {
               >
                 ➜
               </motion.span>
-            </motion.button>
+            </motion.a>
+
             <motion.button
-              className="px-8 py-3 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
+              className="px-6 sm:px-8 py-3 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "#3B82F6",
@@ -118,9 +126,9 @@ const HeroText = () => {
       </div>
 
       {/* Enhanced Mobile View */}
-      <div className="flex flex-col space-y-6 md:hidden px-5">
+      <div className="flex flex-col space-y-6 md:hidden px-4 sm:px-6">
         <motion.p
-          className="text-4xl font-medium text-white"
+          className="text-3xl sm:text-4xl font-medium text-white"
           variants={variants}
           initial="hidden"
           animate="visible"
@@ -130,7 +138,7 @@ const HeroText = () => {
         </motion.p>
         <div>
           <motion.p
-            className="text-5xl font-black text-gray-300"
+            className="text-4xl sm:text-5xl font-black text-gray-300"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -144,10 +152,10 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            <FlipWords words={words} className="font-bold text-7xl" />
+            <FlipWords words={words} className="font-bold text-5xl sm:text-6xl" />
           </motion.div>
           <motion.p
-            className="text-4xl font-black text-gray-300"
+            className="text-3xl sm:text-4xl font-black text-gray-300"
             variants={variants}
             initial="hidden"
             animate="visible"
@@ -158,19 +166,23 @@ const HeroText = () => {
         </div>
 
         <motion.div
-          className="flex flex-col gap-4 mt-6"
+          className="flex flex-col sm:flex-row gap-4 mt-6 justify-center"
           variants={variants}
           initial="hidden"
           animate="visible"
           transition={{ delay: 1.8 }}
         >
-          <motion.button
-            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full"
+          {/* Resume link */}
+          <motion.a
+            href={resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full text-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             View My Work
-          </motion.button>
+          </motion.a>
           <motion.button
             className="px-6 py-3 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
             whileHover={{ scale: 1.05 }}
