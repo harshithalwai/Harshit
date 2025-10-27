@@ -8,7 +8,7 @@ import {
   GitHubIcon,
   GeeksforGeeksIcon,
   LeetCodeIcon,
-  LinkedInIcon,
+  LinkedInIcon, 
 } from "./MenuIcons.jsx";
 
 const SocialIcons = () => {
